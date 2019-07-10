@@ -1,0 +1,139 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "short news",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "thank you",
+                        "please stop",
+                        "silent",
+                        "close",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "getAllNews",
+                    "slots": [],
+                    "samples": [
+                        "headlines",
+                        "headlines please",
+                        "whats there in headlines",
+                        "whats in todays news",
+                        "tell me inshorts",
+                        "news",
+                        "tell me short news"
+                    ]
+                },
+                {
+                    "name": "getCategoryNews",
+                    "slots": [
+                        {
+                            "name": "category",
+                            "type": "category"
+                        }
+                    ],
+                    "samples": [
+                        "tell me {category} news",
+                        "news from {category}",
+                        "short news from {category}",
+                        "headlines from {category}",
+                        "whats there in {category}",
+                        "{category} news"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "category",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "automobile"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "science",
+                                "synonyms": [
+                                    "physics"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hatke"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "miscellaneous"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "entertainment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "startup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "technology",
+                                "synonyms": [
+                                    "amazon",
+                                    "google",
+                                    "AI",
+                                    "data science"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "politics",
+                                "synonyms": [
+                                    "government"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "world"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sports"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "national",
+                                "synonyms": [
+                                    "india"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
