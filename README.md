@@ -7,10 +7,6 @@ There are many flash briefing skills but “ShortNews” overcomes them by its n
 
 ![Short News](worksflow.PNG)
 
-## Demo / Usage
-
-Demo Video - https://www.youtube.com/watch?v=alEnt4AK06k&t=37s
-
 ```markdown
 1. User can start/invoke  this skill by saying:
 
