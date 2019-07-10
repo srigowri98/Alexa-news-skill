@@ -5,7 +5,7 @@ Short News  alexa skill provides user the latest update of India news from diffe
 The user doesn’t need to spend time over internet or television to know news. He/she can just ask Alexa to brief them, User can listen to short news without any interruption within his/her activities.
 There are many flash briefing skills but “ShortNews” overcomes them by its news diversity, precise and timely content delivery.
 
-![Short News](Images//worksflow.PNG)
+![Short News](worksflow.PNG)
 
 ## Demo / Usage
 
