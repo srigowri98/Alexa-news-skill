@@ -1,3 +1,4 @@
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -45,7 +46,7 @@ def getShortNews(category):
         newsDictionary['errorMessage'] = str(e.message)
         return newsDictionary
 
-    soup = BeautifulSoup(htmlBody.text, 'lxml')
+    soup = BeautifulSoup(htmlBody.text, 'html.parser')
     newsCards = soup.find_all(class_='news-card')
     if not newsCards:
         newsDictionary['success'] = False
@@ -65,17 +66,30 @@ def getShortNews(category):
     return newsDictionary
 
 def trimshortNews(kk,category):
-    News = "Your short news for category "+category+" is as follows  "
+    if category == '':
+        News = "Your short news is as follows.  "
+    else:
+        News = "Your short news for "+category+" is as follows.  "
     for ll in kk['data']:
         NewsItem = ll['title']
         NewsItem = NewsItem.replace("'", "")
-        News = News + NewsItem + ". "
+        News = News + NewsItem + ".  "
     return News
 
 #-----------------------------------------------------------------CUSTOM INTENT logic
 def getAllNews(event, context):
-    Abss = trimshortNews(getShortNews('technology'),'technology')
-    return statement("getting_AllNews", Abs, False)
+    category = ''
+    Abss = trimshortNews(getShortNews(category),category)
+    return statement("getting_AllNews", Abss, False)
+
+def getCategoryNews(event, context):
+    category = event['request']['intent']['slots']['category']['value']
+    Abss = trimshortNews(getShortNews(category),category)
+    return statement("getting_AllNews", Abss, False)
+
+def stop_news(event, context):
+    song = "Thanks for using short news, Stopping myself, no news will be read now. If you want to listen please start the short news skill again"
+    return statement("stopping_me", song, True)
 
 # ---------------------------------------------------------------Identifying intents
 def intent_router(event, context):
@@ -84,11 +98,14 @@ def intent_router(event, context):
     if intent == "getAllNews":
         return getAllNews(event, context)  
 
+    if intent == "getCategoryNews":
+        return getCategoryNews(event, context)
+
     if intent == "AMAZON.StopIntent":
-        return stop_BMP(event, context)
+        return stop_news(event, context)
 # ----------------------------------------------------------------Welcome message
 def on_launch(event, context):
-    return statement("Welcome", "A very warm welcome to Short News", False)
+    return statement("Welcome", "A very warm welcome to Short News, You can ask for all news or particular news from politics, sports, technology, science, india , hatke etc", False)
 
 
 #------------------------------------------------------------------Opening short news 
