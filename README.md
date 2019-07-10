@@ -44,8 +44,7 @@ To hear Generic News:
 This file has alexa skill info which is to be set in alexa skill kit development.
 2. lambda_function.py:
 This script is lambda function which has to be deployed over AWS lambda.
-3. Amazon_Alexa_Deliverables_Alexa_Skill_Team_Minman.pdf :
-Details of TECHGIG Hackathon submission.
+
 ## Future Scope
 Skill can be enhanced for interrupting at a time to fetch more information on specific news item or mail the news link to the user’s email ID. It also can be leveraged to skip a news item which user is not interested.
 
